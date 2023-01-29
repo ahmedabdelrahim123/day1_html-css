@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colour change</title>
+</head>
+<style>
+   #red{
+    background-color:rgb(255,0,0);
+   }
+   #green{
+    background-color:rgb(0,255,0);
+   }
+   #blue{
+    background-color:rgb(0,0,255);
+   } 
+
+</style>
+<body>
+    red:<input  onclick="changeTextColor ()" type="range" name="" id="red" min="0" max="255"  value="255" /><br>
+    green:<input  onclick="changeTextColor ()" type="range" name="" id="green" min="0" max="255"  value="255" /><br>
+    blue:<input  onclick="changeTextColor ()" type="range" name="" id="blue" min="0" max="255"  value="255" /><br>
+    <h1 id ="context">Change The Three Colour range above and see the change </h1>
+</body>
+<script>
+    
+    // var red=   document.getElementById('red').value;
+    // console.log(red);
+    // var green=   document.getElementById('green').value;
+    // var blue=   document.getElementById('blue').value;
+    var context =document.getElementById("context");
+///////////////////////
+function changeTextColor () {
+
+document.getElementById("context").style.color = `rgb(
+
+    ${document.getElementById("red").value} 
+    ,
+    ${document.getElementById("green").value} 
+    ,
+    ${document.getElementById("blue").value}
+)`;
+
+}
+
+
+// ////////////////////////
+//    var colour= 'rbg('+red+','+green+','+blue+')';
+//    context.colour=colour;
+//    console.log(context.colour);
+</script>
+</html>

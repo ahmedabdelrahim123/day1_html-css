@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body>
+    <video controls
+    src="frozen.mp4" 
+        width="300"
+        id ="vid"
+        >
+      </video>  
+      <br>
+      <button onclick="continuee()">play</button>
+      <button onclick="stop()">pause</button>
+      <button onclick="start()"><<</button>
+      <button onclick="returns()"><</button>
+      <button onclick="skip()">></button>
+      <button onclick="end()">>></button>
+     <input type="range" name="" id="volume" min="0" max="10" step="1" value="5" />
+      <button onclick="mute()">mute</button>
+      <br>
+    speed:<input type="range" name="" id="speed" min="0.25" max="2" step="0.1" value="1" />
+</body>
+<script>
+   var vid=   document.getElementById("vid");
+   var volume=   document.querySelector('#volume');
+   var speed=   document.querySelector('#speed');
+
+   speed.addEventListener('change',function(e){
+    vid.playbackRate=speed.value;
+ }
+   );
+   volume.addEventListener('change',function(e){
+    
+    vid.volume=e.currentTarget.value/100;
+   }
+   );
+   function start(){
+    vid.currentTime = 0;
+   }
+   function returns(){
+    vid.currentTime = vid.currentTime-10;
+   }
+   function skip(){
+    vid.currentTime = vid.currentTime+10;
+   }
+   function end(){
+    vid.currentTime =  vid.duration - 1;
+   }
+
+   function mute(){
+    vid.muted=true;
+   }
+   function stop(){
+    vid.pause();
+   }
+   function continuee(){
+    vid.play();
+   }
+
+</script>
+</html>

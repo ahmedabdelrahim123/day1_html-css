@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<style>
+    input:valid::after{
+    border-color: orange;
+}
+
+input:invalid{
+    border: 2px solid ;
+    border-color: red;
+}
+</style>
+<body>
+   <form>
+    <h1>Restration Form</h1>
+    name:   <input type="text" pattern="[A-Za-z].{3,}" name="email" id="name" ><br><br>
+    email:      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" name="email" id="email" autocomplete="off" class="form-control" id="exampleInputEmail1" 
+    oninvalid="document.getElementById('s2').innerHTML = 'the required name may only be a collection of alphabets and @ ';" /><br><br />
+   <span id="s2"></span>
+    <button type="submit" class="btn btn-success">submit</button>
+   </form> 
+</body>
+</html>
